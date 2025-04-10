@@ -1,0 +1,49 @@
+
+
+            component_list = {
+    'slotted_end_cap': {
+        'num': '2',
+        'description': 'A short cylindrical cap with a wide flat circular flange and two deep, symmetric slots cut into the cylindrical body. A central hole is present on the flange face.'
+    },
+    'slotted_cylinder_with_flange': {
+        'num': '1',
+        'description': 'A cylindrical component with a wide flange at one end and two deep slots cut into the cylindrical body. The flange is slightly thicker and the inner bore is hollow.'
+    },
+    'flanged_hollow_cylinder': {
+        'num': '1',
+        'description': 'A smooth, hollow cylindrical tube with a wide flange at one end. The flange is flat and circular, and the cylinder has no slots or holes except the central bore.'
+    },
+    'solid_flanged_cylinder': {
+        'num': '1',
+        'description': 'A solid cylindrical component with a wide flat flange at one end and a central conical hole. The body is smooth and unbroken.'
+    },
+    'slotted_inner_hub': {
+        'num': '1',
+        'description': 'A recessed cylindrical hub with a wide base flange and two thick, symmetric internal arms forming slots. A central hole is present at the bottom of the recess.'
+    }
+}
+            modify component list:
+            component_list = {
+    'slotted_end_cap': {
+        'num': '2',
+        'description': 'A short cylindrical cap with a wide flat circular flange and two deep, symmetric slots cut into the cylindrical body. A central hole is present on the flange face.'
+    },
+    'slotted_cylinder_with_flange': {
+        'num': '1',
+        'description': 'A cylindrical component with a wide flange at one end and two deep slots cut into the cylindrical body. The flange is slightly thicker and the inner bore is hollow.'
+    },
+    'flanged_hollow_cylinder': {
+        'num': '1',
+        'description': 'A smooth, hollow cylindrical tube with a wide flange at one end. The flange is flat and circular, and the cylinder has no slots or holes except the central bore.'
+    },
+    'solid_flanged_cylinder': {
+        'num': '1',
+        'description': 'A solid cylindrical component with a wide flat flange at one end and a central conical hole. The body is smooth and unbroken.'
+    },
+    'slotted_inner_hub': {
+        'num': '1',
+        'description': 'A recessed cylindrical hub with a wide base flange and two thick, symmetric internal arms forming slots. A central hole is present at the bottom of the recess.'
+    }
+}
+            
+        
