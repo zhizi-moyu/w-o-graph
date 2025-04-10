@@ -1,0 +1,17 @@
+
+
+            component_list = {
+    'spacer_ring': {
+        'num': '6',
+        'description': 'A medium-thickness cylindrical ring with a smooth circular central hole. The component has flat top and bottom surfaces, forming a washer-like shape. The outer diameter is significantly larger than the inner diameter, giving it a broad ring appearance.'
+    }
+}
+            modify component list:
+            component_list = {
+    'spacer_ring': {
+        'num': '6',
+        'description': 'A medium-thickness cylindrical ring with a smooth circular central hole. The component has flat top and bottom surfaces, forming a washer-like shape. The outer diameter is significantly larger than the inner diameter, giving it a broad ring appearance.'
+    }
+}
+            
+        
