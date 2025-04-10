@@ -1,0 +1,17 @@
+
+
+            component_list = {
+    'locking_key': {
+        'num': '1',
+        'description': 'A small, flat, asymmetrical mechanical key with a polygonal profile. One end is rounded with a semicircular protrusion, while the opposite end tapers to a sharp angled point. The top and bottom surfaces are flat and parallel, forming a thin plate-like body. The side profile shows a slight curvature and angled edges, suggesting it is designed to fit into a matching slot or groove. The component appears to be used for locking or aligning rotating parts in a mechanical assembly.'
+    }
+}
+            modify component list:
+            component_list = {
+    'locking_key': {
+        'num': '1',
+        'description': 'A small, flat, asymmetrical mechanical key with a polygonal profile. One end is rounded with a semicircular protrusion, while the opposite end tapers to a sharp angled point. The top and bottom surfaces are flat and parallel, forming a thin plate-like body. The side profile shows a slight curvature and angled edges, suggesting it is designed to fit into a matching slot or groove. The component appears to be used for locking or aligning rotating parts in a mechanical assembly.'
+    }
+}
+            
+        
