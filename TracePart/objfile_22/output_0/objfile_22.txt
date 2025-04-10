@@ -1,0 +1,61 @@
+
+
+            component_list = {
+    'input_shaft_hub': {
+        'num': '1',
+        'description': 'A solid cylindrical component with a central bore and a side hole for securing to a shaft. It has a flange face for mounting.'
+    },
+    'output_shaft_hub': {
+        'num': '1',
+        'description': 'A mirror of the input shaft hub, also cylindrical with a central bore and side hole, used to connect to the output shaft.'
+    },
+    'spacer_ring': {
+        'num': '2',
+        'description': 'Flat, thin rings placed between the flange plates and the flexible element. They help maintain spacing and alignment.'
+    },
+    'flange_plate': {
+        'num': '2',
+        'description': 'Thick, flat circular plates with bolt holes. These are mounted on the shaft hubs and clamp the flexible element in place.'
+    },
+    'bolt': {
+        'num': '4',
+        'description': 'Slender cylindrical fasteners with hex heads, used to secure the flange plates together through the bolt holes.'
+    },
+    'nut': {
+        'num': '4',
+        'description': 'Hexagonal nuts paired with the bolts to fasten the flange plates. Positioned on the opposite side of the bolts.'
+    },
+    'flexible_element': {
+        'num': '1',
+        'description': 'A mesh or grid-like flexible structure sandwiched between the flange plates. It allows for slight misalignment and torque transmission.'
+    }
+}
+            modify component list:
+            component_list = {
+    'input_shaft_hub': {
+        'num': '1',
+        'description': 'A solid cylindrical component with a central bore and a side hole for securing to a shaft. It has a flange face for mounting.'
+    },
+    'output_shaft_hub': {
+        'num': '1',
+        'description': 'A mirror of the input shaft hub, also cylindrical with a central bore and side hole, used to connect to the output shaft.'
+    },
+    'flange_plate': {
+        'num': '2',
+        'description': 'Thick, flat circular plates with bolt holes. These are mounted on the shaft hubs and clamp the flexible element in place.'
+    },
+    'bolt': {
+        'num': '4',
+        'description': 'Slender cylindrical fasteners with hex heads, used to secure the flange plates together through the bolt holes.'
+    },
+    'nut': {
+        'num': '4',
+        'description': 'Hexagonal nuts paired with the bolts to fasten the flange plates. Positioned on the opposite side of the bolts.'
+    },
+    'flexible_element': {
+        'num': '1',
+        'description': 'A mesh or grid-like flexible structure sandwiched between the flange plates. It allows for slight misalignment and torque transmission.'
+    }
+}
+            
+        
