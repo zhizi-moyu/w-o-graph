@@ -1,0 +1,33 @@
+
+
+            component_list = {
+    'left_coupling_half': {
+        'num': '1',
+        'description': 'A short cylindrical component with a central bore for shaft insertion, two threaded holes on the side for clamping screws, and a slit cut along the length to allow for slight flexibility and clamping action.'
+    },
+    'right_coupling_half': {
+        'num': '1',
+        'description': 'A matching cylindrical component similar to the left half, with a central bore, two threaded holes for clamping screws, and a complementary slit. The end face has a protruding tab and slot geometry that interlocks with the left half.'
+    },
+    'clamping_screw': {
+        'num': '4',
+        'description': 'Short socket head cap screws used to tighten the coupling halves onto the shafts. Each screw fits into a threaded hole on the side of the coupling halves to provide clamping force.'
+    }
+}
+            modify component list:
+            component_list = {
+    'left_coupling_half': {
+        'num': '1',
+        'description': 'A short cylindrical component with a central bore for shaft insertion, two threaded holes on the side for clamping screws, and a slit cut along the length to allow for slight flexibility and clamping action.'
+    },
+    'right_coupling_half': {
+        'num': '1',
+        'description': 'A matching cylindrical component similar to the left half, with a central bore, two threaded holes for clamping screws, and a complementary slit. The end face has a protruding tab and slot geometry that interlocks with the left half.'
+    },
+    'clamping_screw': {
+        'num': '4',
+        'description': 'Short socket head cap screws used to tighten the coupling halves onto the shafts. Each screw fits into a threaded hole on the side of the coupling halves to provide clamping force.'
+    }
+}
+            
+        
