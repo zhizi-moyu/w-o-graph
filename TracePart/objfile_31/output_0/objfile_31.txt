@@ -1,0 +1,25 @@
+
+
+            component_list = {
+    'helical_body': {
+        'num': '1',
+        'description': 'A single cylindrical component with multiple helical cuts along its length, forming a flexible beam structure. The cylinder has a central bore running through its axis for shaft insertion. Each end face has two threaded holes for set screws, and the outer surface is smooth except for the helical slots that provide torsional flexibility.'
+    },
+    'set_screw': {
+        'num': '4',
+        'description': 'Small cylindrical screws with hexagonal sockets, designed to be inserted into the threaded holes on the end faces of the helical body. These screws are used to clamp and secure the shafts inside the central bore of the coupling.'
+    }
+}
+            modify component list:
+            component_list = {
+    'helical_body': {
+        'num': '1',
+        'description': 'A single cylindrical component with multiple helical cuts along its length, forming a flexible beam structure. The cylinder has a central bore running through its axis for shaft insertion. Each end face has two threaded holes for set screws, and the outer surface is smooth except for the helical slots that provide torsional flexibility.'
+    },
+    'set_screw': {
+        'num': '4',
+        'description': 'Small cylindrical screws with hexagonal sockets, designed to be inserted into the threaded holes on the end faces of the helical body. These screws are used to clamp and secure the shafts inside the central bore of the coupling.'
+    }
+}
+            
+        
