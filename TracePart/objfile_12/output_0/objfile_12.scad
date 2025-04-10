@@ -1,4 +1,4 @@
-```scad
+
 // Parameters
 hub_diameter = 30;
 hub_length = 25;
@@ -117,5 +117,4 @@ module coupling() {
 
 // Render the full coupling
 coupling();
-```
 

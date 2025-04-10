@@ -1,4 +1,4 @@
-```scad
+
 $fn = 100; // Smoothness
 
 // Parameters
@@ -54,5 +54,4 @@ module set_screw() {
             cylinder(h = 1, d = 2, $fn = 6, center = true);
     }
 }
-```
 

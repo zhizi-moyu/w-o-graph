@@ -1,124 +1,100 @@
-```scad
+
+$fn = 100; // Smoothness
+
 // Parameters
 shaft_d = 20;
-shaft_l = 80;
+shaft_l = 30;
+bore_d = 8;
 
-hub_d = 30;
-hub_l = 15;
-
-flange_d = 40;
+flange_d = 50;
 flange_t = 5;
+bolt_hole_d = 5;
+bolt_circle_d = 40;
 
 spacer_t = 2;
+spacer_d = flange_d;
 
-bolt_d = 3;
+bolt_d = 5;
 bolt_l = 20;
-bolt_head_d = 5;
-bolt_head_h = 2;
-
-nut_d = 5;
-nut_h = 3;
-
-bolt_circle_r = 15;
-bolt_count = 4;
+nut_d = 8;
+nut_h = 4;
 
 // Modules
-module central_shaft() {
-    cylinder(d=shaft_d, h=shaft_l, $fn=100);
-}
-
-module hub() {
-    translate([0, 0, -hub_l])
-        cylinder(d=hub_d, h=hub_l, $fn=100);
+module shaft() {
+    difference() {
+        cylinder(d=shaft_d, h=shaft_l);
+        translate([0, 0, -1])
+            cylinder(d=bore_d, h=shaft_l + 2);
+    }
 }
 
 module flange_plate() {
     difference() {
-        cylinder(d=flange_d, h=flange_t, $fn=100);
-        cylinder(d=shaft_d, h=flange_t + 1, $fn=100);
-        for (i = [0 : 360 / bolt_count : 360 - 360 / bolt_count]) {
-            angle = i;
-            x = bolt_circle_r * cos(angle);
-            y = bolt_circle_r * sin(angle);
-            translate([x, y, 0])
-                cylinder(d=bolt_d + 1, h=flange_t + 1, $fn=50);
+        cylinder(d=flange_d, h=flange_t);
+        for (i = [0:5]) {
+            angle = i * 360 / 6;
+            translate([bolt_circle_d/2 * cos(angle), bolt_circle_d/2 * sin(angle), 0])
+                cylinder(d=bolt_hole_d, h=flange_t + 1);
         }
     }
 }
 
 module spacer_ring() {
     difference() {
-        cylinder(d=flange_d, h=spacer_t, $fn=100);
-        cylinder(d=shaft_d, h=spacer_t + 1, $fn=100);
+        cylinder(d=spacer_d, h=spacer_t);
+        cylinder(d=bolt_circle_d - 10, h=spacer_t + 1);
     }
 }
 
 module bolt() {
     union() {
-        cylinder(d=bolt_d, h=bolt_l, $fn=50);
+        cylinder(d=bolt_d, h=bolt_l);
         translate([0, 0, bolt_l])
-            cylinder(d=bolt_head_d, h=bolt_head_h, $fn=6);
+            cylinder(d=bolt_d * 1.5, h=2); // hex head approximation
     }
 }
 
 module nut() {
-    cylinder(d=nut_d, h=nut_h, $fn=6);
-}
-
-module bolt_with_nut() {
-    union() {
-        bolt();
-        translate([0, 0, -nut_h])
-            nut();
-    }
-}
-
-module flange_assembly() {
-    union() {
-        flange_plate();
-        translate([0, 0, flange_t])
-            spacer_ring();
-        translate([0, 0, flange_t + spacer_t])
-            flange_plate();
-        for (i = [0 : 360 / bolt_count : 360 - 360 / bolt_count]) {
-            angle = i;
-            x = bolt_circle_r * cos(angle);
-            y = bolt_circle_r * sin(angle);
-            translate([x, y, flange_t])
-                rotate([0, 0, 0])
-                    bolt_with_nut();
-        }
-    }
+    cylinder(d=nut_d, h=nut_h);
 }
 
 // Assembly
 module coupling() {
-    union() {
-        // Central shaft
-        translate([0, 0, hub_l + flange_t + spacer_t + flange_t])
-            central_shaft();
+    // Input shaft
+    translate([0, 0, 0])
+        shaft();
 
-        // Input hub
-        translate([0, 0, 0])
-            hub();
+    // Output shaft
+    translate([0, 0, shaft_l + 2 * flange_t + 2 * spacer_t])
+        shaft();
 
-        // Output hub
-        translate([0, 0, hub_l + flange_t + spacer_t + flange_t + shaft_l])
-            rotate([180, 0, 0])
-                hub();
+    // Flange plates
+    translate([0, 0, shaft_l])
+        flange_plate();
 
-        // Left flange assembly
-        translate([0, 0, hub_l])
-            flange_assembly();
+    translate([0, 0, shaft_l + flange_t + 2 * spacer_t])
+        flange_plate();
 
-        // Right flange assembly
-        translate([0, 0, hub_l + flange_t + spacer_t + flange_t + shaft_l])
-            rotate([180, 0, 0])
-                flange_assembly();
+    // Spacer rings
+    translate([0, 0, shaft_l + flange_t])
+        spacer_ring();
+
+    translate([0, 0, shaft_l + flange_t + spacer_t])
+        spacer_ring();
+
+    // Bolts and nuts
+    for (i = [0:5]) {
+        angle = i * 360 / 6;
+        x = bolt_circle_d/2 * cos(angle);
+        y = bolt_circle_d/2 * sin(angle);
+        // Bolt
+        translate([x, y, shaft_l - 2])
+            bolt();
+        // Nut
+        translate([x, y, shaft_l + flange_t + 2 * spacer_t + flange_t])
+            nut();
     }
 }
 
-// Render the model
+// Render the full coupling
 coupling();
-```
-

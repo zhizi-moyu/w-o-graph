@@ -1,4 +1,4 @@
-```scad
+
 // Parameters
 outer_size = 40;     // Outer box width and depth
 height = 20;         // Height of the box
@@ -32,5 +32,4 @@ module sloped_inner_box() {
 
 // Render the model
 sloped_inner_box();
-```
 

@@ -1,4 +1,4 @@
-```scad
+
 $fn = 100; // Smoothness
 
 // Parameters
@@ -98,5 +98,3 @@ module coupling() {
 
 // Render the full coupling
 coupling();
-```
-

@@ -1,4 +1,4 @@
-```scad
+
 $fn=100;
 
 // Parameters (adjust as needed)
@@ -113,5 +113,3 @@ translate([0,0,0]) slotted_cylinder_with_flange();
 translate([40,0,0]) flanged_hollow_cylinder();
 translate([-40,-30,0]) solid_flanged_cylinder();
 translate([0,-30,0]) slotted_inner_hub();
-```
-

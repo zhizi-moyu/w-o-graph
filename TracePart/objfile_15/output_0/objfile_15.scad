@@ -1,84 +1,82 @@
-```scad
+
+$fn = 100; // Smoothness
+
 // Parameters
 hub_diameter = 30;
 hub_length = 20;
-bore_diameter = 10;
-jaw_radius = 5;
-jaw_depth = 5;
-jaw_count = 3;
-spider_arm_thickness = 4;
-spider_arm_length = 6;
-spider_radius = 12;
-set_screw_diameter = 3;
-set_screw_length = 8;
+hub_hole_diameter = 8;
+teeth_height = 3;
+teeth_count = 20;
+teeth_width = 2;
+
+gear_ring_thickness = 5;
+gear_ring_inner_diameter = hub_diameter + 2 * teeth_height;
+gear_ring_outer_diameter = gear_ring_inner_diameter + 4;
+
+sleeve_length = 40;
+sleeve_outer_diameter = gear_ring_outer_diameter + 4;
+sleeve_inner_diameter = gear_ring_outer_diameter;
 
 // Modules
-module hub(mirror=false) {
-    rotate([0, 0, mirror ? 180 : 0])
+module hub() {
     difference() {
-        union() {
-            // Main hub body
-            cylinder(d=hub_diameter, h=hub_length, $fn=100);
-            
-            // Jaws
-            for (i = [0 : 360/jaw_count : 360 - 360/jaw_count]) {
-                rotate([0, 0, i])
-                translate([hub_diameter/2 - jaw_radius, 0, hub_length - jaw_depth])
-                    cylinder(r=jaw_radius, h=jaw_depth, $fn=50);
-            }
-        }
-        // Bore
+        cylinder(d=hub_diameter, h=hub_length);
         translate([0, 0, -1])
-            cylinder(d=bore_diameter, h=hub_length + 2, $fn=100);
-        
-        // Set screw hole
-        rotate([0, 90, 0])
-        translate([-hub_length/2, 0, hub_diameter/4])
-            cylinder(d=set_screw_diameter, h=hub_length, $fn=30);
+            cylinder(d=hub_hole_diameter, h=hub_length + 2);
+    }
+    // External teeth
+    for (i = [0:teeth_count - 1]) {
+        angle = 360 / teeth_count * i;
+        rotate([0, 0, angle])
+        translate([hub_diameter / 2, -teeth_width / 2, 0])
+            cube([teeth_height, teeth_width, hub_length]);
     }
 }
 
-module elastomer_spider() {
+module internal_gear_ring() {
     difference() {
-        // Central disk
-        cylinder(d=spider_radius*2, h=spider_arm_thickness, $fn=100);
-        
-        // Cutouts between arms
-        for (i = [0 : 60 : 300]) {
-            rotate([0, 0, i])
-            translate([spider_radius, 0, -1])
-                cube([spider_arm_length, spider_arm_length, spider_arm_thickness + 2], center=true);
-        }
+        cylinder(d=gear_ring_outer_diameter, h=gear_ring_thickness);
+        cylinder(d=gear_ring_inner_diameter, h=gear_ring_thickness + 1);
+    }
+    // Internal teeth (simplified as inward cubes)
+    for (i = [0:teeth_count - 1]) {
+        angle = 360 / teeth_count * i;
+        rotate([0, 0, angle])
+        translate([(gear_ring_inner_diameter / 2) - teeth_height, -teeth_width / 2, 0])
+            cube([teeth_height, teeth_width, gear_ring_thickness]);
     }
 }
 
-module set_screw() {
-    union() {
-        // Screw body
-        cylinder(d=set_screw_diameter, h=set_screw_length, $fn=30);
-        // Hex socket
-        translate([0, 0, set_screw_length - 2])
-            cylinder(d=2.5, h=2, $fn=6);
+module outer_sleeve() {
+    difference() {
+        cylinder(d=sleeve_outer_diameter, h=sleeve_length);
+        translate([0, 0, -1])
+            cylinder(d=sleeve_inner_diameter, h=sleeve_length + 2);
     }
 }
 
 // Assembly
-translate([0, 0, 0])
-    hub(mirror=false);
+module flexible_coupling() {
+    // Outer sleeve
+    translate([0, 0, 0])
+        outer_sleeve();
 
-translate([0, 0, hub_length])
-    hub(mirror=true);
+    // Internal gear rings
+    translate([0, 0, 5])
+        internal_gear_ring();
+    translate([0, 0, sleeve_length - gear_ring_thickness - 5])
+        internal_gear_ring();
 
-translate([0, 0, hub_length - spider_arm_thickness/2])
-    elastomer_spider();
+    // Input hub
+    translate([0, 0, -hub_length + 5])
+        hub();
 
-// Set screws
-translate([-hub_length/2, hub_diameter/4, hub_length/2])
-    rotate([0, 90, 0])
-    set_screw();
+    // Output hub
+    translate([0, 0, sleeve_length - 5])
+        rotate([180, 0, 0])
+            hub();
+}
 
-translate([hub_length + hub_length/2, hub_diameter/4, hub_length/2])
-    rotate([0, 90, 0])
-    set_screw();
-```
+// Render the full model
+flexible_coupling();
 

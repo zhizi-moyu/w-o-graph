@@ -1,4 +1,4 @@
-```scad
+
 // Parameters
 frame_length = 100;
 frame_width = 60;
@@ -59,5 +59,4 @@ module assembly() {
 }
 
 assembly();
-```
 

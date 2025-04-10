@@ -1,77 +1,82 @@
-```scad
-$fn = 100;
+
+$fn = 100; // Smoothness
 
 // Parameters
-hub_diameter = 40;
+hub_diameter = 30;
 hub_length = 20;
-bore_diameter = 10;
-jaw_width = 8;
-jaw_length = 10;
-jaw_height = 10;
-spider_thickness = 10;
-pin_diameter = 3;
-pin_length = 50;
-pin_offset = 6;
+hub_hole_diameter = 8;
+teeth_height = 3;
+teeth_count = 20;
+teeth_width = 2;
+
+gear_ring_thickness = 5;
+gear_ring_inner_diameter = hub_diameter + 2 * teeth_height;
+gear_ring_outer_diameter = gear_ring_inner_diameter + 4;
+
+sleeve_length = 40;
+sleeve_outer_diameter = gear_ring_outer_diameter + 4;
+sleeve_inner_diameter = gear_ring_outer_diameter;
 
 // Modules
-module hub(is_input=true) {
+module hub() {
     difference() {
         cylinder(d=hub_diameter, h=hub_length);
         translate([0, 0, -1])
-            cylinder(d=bore_diameter, h=hub_length + 2);
-        // Threaded holes
-        for (i = [0, 180]) {
-            rotate([0, 0, i])
-                translate([hub_diameter/3, 0, hub_length/2])
-                    rotate([90, 0, 0])
-                        cylinder(d=2, h=5);
-        }
+            cylinder(d=hub_hole_diameter, h=hub_length + 2);
     }
-
-    // Jaws
-    for (i = [0:2]) {
-        rotate([0, 0, i * 120])
-            translate([hub_diameter/2 - jaw_width/2, -jaw_width/2, hub_length])
-                cube([jaw_width, jaw_width, jaw_height]);
+    // External teeth
+    for (i = [0:teeth_count - 1]) {
+        angle = 360 / teeth_count * i;
+        rotate([0, 0, angle])
+        translate([hub_diameter / 2, -teeth_width / 2, 0])
+            cube([teeth_height, teeth_width, hub_length]);
     }
 }
 
-module spider_insert() {
-    for (i = [0:5]) {
-        rotate([0, 0, i * 60])
-            translate([hub_diameter/2 - jaw_width, -jaw_width/2, 0])
-                cube([jaw_width, jaw_width, spider_thickness]);
+module internal_gear_ring() {
+    difference() {
+        cylinder(d=gear_ring_outer_diameter, h=gear_ring_thickness);
+        cylinder(d=gear_ring_inner_diameter, h=gear_ring_thickness + 1);
+    }
+    // Internal teeth (simplified as inward cubes)
+    for (i = [0:teeth_count - 1]) {
+        angle = 360 / teeth_count * i;
+        rotate([0, 0, angle])
+        translate([(gear_ring_inner_diameter / 2) - teeth_height, -teeth_width / 2, 0])
+            cube([teeth_height, teeth_width, gear_ring_thickness]);
     }
 }
 
-module pin() {
-    cylinder(d=pin_diameter, h=pin_length);
+module outer_sleeve() {
+    difference() {
+        cylinder(d=sleeve_outer_diameter, h=sleeve_length);
+        translate([0, 0, -1])
+            cylinder(d=sleeve_inner_diameter, h=sleeve_length + 2);
+    }
 }
 
 // Assembly
-module coupling() {
-    // Input hub
+module flexible_coupling() {
+    // Outer sleeve
     translate([0, 0, 0])
-        hub(true);
+        outer_sleeve();
+
+    // Internal gear rings
+    translate([0, 0, 5])
+        internal_gear_ring();
+    translate([0, 0, sleeve_length - gear_ring_thickness - 5])
+        internal_gear_ring();
+
+    // Input hub
+    translate([0, 0, -hub_length + 5])
+        hub();
 
     // Output hub
-    translate([0, 0, hub_length + spider_thickness])
-        mirror([0, 0, 1])
-            hub(false);
-
-    // Spider insert
-    translate([0, 0, hub_length])
-        spider_insert();
-
-    // Pins
-    for (i = [0, 180]) {
-        rotate([0, 0, i])
-            translate([pin_offset, 0, hub_length/2])
-                rotate([90, 0, 0])
-                    pin();
-    }
+    translate([0, 0, sleeve_length - 5])
+        rotate([180, 0, 0])
+            hub();
 }
 
-coupling();
-```
+// Render the full model
+flexible_coupling();
 

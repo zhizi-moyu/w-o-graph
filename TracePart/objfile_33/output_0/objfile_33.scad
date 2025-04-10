@@ -1,4 +1,4 @@
-```scad
+
 $fn=100;
 
 // Parameters
@@ -102,5 +102,3 @@ for (i = [0:120:360]) {
     translate([x, y, hub_length - nut_thickness])
         nut();
 }
-```
-

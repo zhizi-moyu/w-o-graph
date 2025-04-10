@@ -1,4 +1,4 @@
-```scad
+
 // Parameters
 block_length = 60;
 block_width = 30;
@@ -27,5 +27,3 @@ difference() {
                 cylinder(h=block_height + 2, d=hole_diameter, center=true);
     }
 }
-```
- 

@@ -1,4 +1,4 @@
-```scad
+
 $fn = 100;
 
 // Parameters
@@ -69,5 +69,3 @@ module helical_flex_body() {
 
 // Render the full coupling
 coupling();
-```
-

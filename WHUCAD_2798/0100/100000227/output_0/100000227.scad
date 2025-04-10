@@ -1,4 +1,4 @@
-```scad
+
 $fn = 100; // Smoothness
 
 // Parameters
@@ -69,5 +69,4 @@ union() {
     tongue_end_connector();
     pin();
 }
-```
 

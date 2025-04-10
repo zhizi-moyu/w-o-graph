@@ -1,4 +1,4 @@
-```scad
+
 $fn = 100; // Smoothness
 
 module hex_socket_bolt(head_d=10, head_h=6, shaft_d=5, shaft_h=20, hex_r=3.5) {
@@ -19,5 +19,3 @@ module hex_socket_bolt(head_d=10, head_h=6, shaft_d=5, shaft_h=20, hex_r=3.5) {
 
 // Call the bolt module
 hex_socket_bolt();
-```
-

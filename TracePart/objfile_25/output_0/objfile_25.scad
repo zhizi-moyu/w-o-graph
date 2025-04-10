@@ -1,4 +1,4 @@
-```scad
+
 $fn = 100;
 
 // Parameters
@@ -68,5 +68,4 @@ module clamping_screw() {
 
 // Render the model
 flexible_coupling();
-```
 

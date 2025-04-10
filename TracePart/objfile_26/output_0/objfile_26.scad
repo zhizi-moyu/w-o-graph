@@ -1,63 +1,70 @@
-```scad
-$fn = 100; // Smoothness
 
-module shaft_body() {
-    union() {
-        // Central bulge
-        cylinder(h = 20, r1 = 9, r2 = 9, center = true);
+$fn = 100;
 
-        // Tapered transition to middle shaft
-        translate([0, 0, -10])
-            cylinder(h = 10, r1 = 7, r2 = 9);
+// Parameters
+main_length = 60;
+main_radius = 10;
+bulge_radius = 12;
+bulge_length = 20;
+cut_width = 1.5;
+cut_depth = 2;
+num_cuts = 5;
+screw_radius = 1.5;
+screw_length = 8;
+screw_offset = 8;
 
-        translate([0, 0, 0])
-            cylinder(h = 10, r1 = 9, r2 = 7);
-
-        // Middle shaft sections
-        translate([0, 0, -30])
-            cylinder(h = 20, r = 7);
-
-        translate([0, 0, 20])
-            cylinder(h = 20, r = 7);
-
-        // End sections
-        translate([0, 0, -50])
-            cylinder(h = 20, r = 6);
-
-        translate([0, 0, 40])
-            cylinder(h = 20, r = 6);
-
-        // Grooves on both ends
-        for (i = [-1, 0, 1]) {
-            translate([0, 0, -45 + i * 5])
-                difference() {
-                    cylinder(h = 1, r = 6.5);
-                    cylinder(h = 1, r = 6);
-                }
-
-            translate([0, 0, 45 + i * 5])
-                difference() {
-                    cylinder(h = 1, r = 6.5);
-                    cylinder(h = 1, r = 6);
-                }
+// Main module
+module flexible_coupling() {
+    difference() {
+        union() {
+            // Left shaft
+            cylinder(h = (main_length - bulge_length)/2, r = main_radius);
+            // Right shaft
+            translate([0, 0, main_length - (main_length - bulge_length)/2])
+                cylinder(h = (main_length - bulge_length)/2, r = main_radius);
+            // Bulge
+            translate([0, 0, (main_length - bulge_length)/2])
+                cylinder(h = bulge_length, r1 = main_radius, r2 = bulge_radius);
         }
 
-        // Through-holes on both ends
-        for (z = [-45, 45]) {
+        // Helical cuts (simulated with rotated slots)
+        for (i = [0:num_cuts-1]) {
+            rotate([0, 0, i * 360 / num_cuts])
+                translate([-cut_width/2, main_radius - cut_depth, i * main_length / num_cuts])
+                    cube([cut_width, cut_depth, main_length / num_cuts + 2], center=false);
+        }
+
+        // Clamping screw holes
+        for (z = [screw_offset, main_length - screw_offset]) {
             rotate([90, 0, 0])
-                translate([0, z, -1.5])
-                    cylinder(h = 3, r = 1.2);
+                translate([z, -main_radius, -screw_radius])
+                    cylinder(h = 2*main_radius, r = screw_radius);
         }
 
-        // Key slots (rectangular cuts)
-        for (z = [-45, 45]) {
-            rotate([0, 0, 45])
-                translate([-1, -3, z])
-                    cube([2, 6, 1], center = true);
+        // Slits at both ends
+        for (z = [0, main_length - 1]) {
+            translate([-cut_width/2, -main_radius, z])
+                cube([cut_width, 2*main_radius, 2]);
         }
+    }
+
+    // Clamping screws
+    for (z = [screw_offset, main_length - screw_offset]) {
+        translate([0, main_radius + 0.5, z])
+            rotate([90, 0, 0])
+                clamping_screw();
     }
 }
 
-shaft_body();
-```
+// Clamping screw module
+module clamping_screw() {
+    union() {
+        cylinder(h = screw_length, r = screw_radius);
+        // Hex socket (simplified)
+        translate([0, 0, screw_length - 1])
+            cylinder(h = 1, r = screw_radius * 0.8, $fn=6);
+    }
+}
 
+// Render the model
+flexible_coupling();

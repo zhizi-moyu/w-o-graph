@@ -1,91 +1,71 @@
-```scad
-// Parameters
-jaw_width = 20;
-jaw_height = 15;
-jaw_depth = 30;
-groove_radius = 10;
-bolt_radius = 2;
-bolt_spacing = 12;
-core_radius = 10;
-core_length = 10;
-arm_thickness = 5;
-arm_length = 10;
-nut_size = 5;
 
-// Modules
-module left_jaw_block() {
+$fn = 100;
+
+// Parameters
+main_length = 60;
+main_radius = 10;
+bulge_radius = 12;
+bulge_length = 20;
+cut_width = 1.5;
+cut_depth = 2;
+num_cuts = 5;
+screw_radius = 1.5;
+screw_length = 8;
+screw_offset = 8;
+
+// Main module
+module flexible_coupling() {
     difference() {
         union() {
-            // Base block
-            cube([jaw_width, jaw_depth, jaw_height], center=false);
-            
-            // Interlocking arm
-            translate([jaw_width/2 - arm_thickness/2, jaw_depth, jaw_height])
-                rotate([90, 0, 0])
-                cube([arm_thickness, arm_length, jaw_height], center=false);
+            // Left shaft
+            cylinder(h = (main_length - bulge_length)/2, r = main_radius);
+            // Right shaft
+            translate([0, 0, main_length - (main_length - bulge_length)/2])
+                cylinder(h = (main_length - bulge_length)/2, r = main_radius);
+            // Bulge
+            translate([0, 0, (main_length - bulge_length)/2])
+                cylinder(h = bulge_length, r1 = main_radius, r2 = bulge_radius);
         }
-        // Semi-circular groove
-        translate([jaw_width/2, jaw_depth/2, jaw_height/2])
+
+        // Helical cuts (simulated with rotated slots)
+        for (i = [0:num_cuts-1]) {
+            rotate([0, 0, i * 360 / num_cuts])
+                translate([-cut_width/2, main_radius - cut_depth, i * main_length / num_cuts])
+                    cube([cut_width, cut_depth, main_length / num_cuts + 2], center=false);
+        }
+
+        // Clamping screw holes
+        for (z = [screw_offset, main_length - screw_offset]) {
             rotate([90, 0, 0])
-            cylinder(h=jaw_depth+1, r=groove_radius, center=true);
+                translate([z, -main_radius, -screw_radius])
+                    cylinder(h = 2*main_radius, r = screw_radius);
+        }
 
-        // Bolt holes
-        for (x = [-bolt_spacing/2, bolt_spacing/2])
-            translate([jaw_width/2 + x, jaw_depth - 2, jaw_height/2])
-                rotate([90, 0, 0])
-                cylinder(h=jaw_depth, r=bolt_radius, center=true);
+        // Slits at both ends
+        for (z = [0, main_length - 1]) {
+            translate([-cut_width/2, -main_radius, z])
+                cube([cut_width, 2*main_radius, 2]);
+        }
+    }
 
-        // Nut pockets
-        for (x = [-bolt_spacing/2, bolt_spacing/2])
-            translate([jaw_width/2 + x, 0, jaw_height/2])
-                rotate([90, 0, 0])
-                cylinder(h=5, r=nut_size, $fn=6);
+    // Clamping screws
+    for (z = [screw_offset, main_length - screw_offset]) {
+        translate([0, main_radius + 0.5, z])
+            rotate([90, 0, 0])
+                clamping_screw();
     }
 }
 
-module right_jaw_block() {
-    mirror([1, 0, 0])
-        left_jaw_block();
-}
-
-module central_cylindrical_core() {
-    translate([jaw_width/2, jaw_depth/2, jaw_height/2])
-        rotate([90, 0, 0])
-        cylinder(h=core_length, r=core_radius, center=true);
-}
-
-module bolt() {
+// Clamping screw module
+module clamping_screw() {
     union() {
-        // Shaft
-        cylinder(h=jaw_depth + 5, r=bolt_radius, center=false);
-        // Head
-        translate([0, 0, jaw_depth + 5])
-            cylinder(h=2, r=bolt_radius * 1.5, $fn=6);
+        cylinder(h = screw_length, r = screw_radius);
+        // Hex socket (simplified)
+        translate([0, 0, screw_length - 1])
+            cylinder(h = 1, r = screw_radius * 0.8, $fn=6);
     }
 }
 
-module nut() {
-    cylinder(h=3, r=nut_size, $fn=6);
-}
-
-// Assembly
-translate([0, 0, 0])
-    left_jaw_block();
-
-translate([jaw_width, 0, 0])
-    right_jaw_block();
-
-translate([jaw_width/2, jaw_depth/2, jaw_height/2])
-    central_cylindrical_core();
-
-// Bolts
-for (x = [-bolt_spacing/2, bolt_spacing/2])
-    translate([jaw_width/2 + x, jaw_depth - 2, jaw_height])
-        bolt();
-
-// Nuts
-for (x = [-bolt_spacing/2, bolt_spacing/2])
-    translate([jaw_width/2 + x, 0, jaw_height/2])
-        nut();
-```
+// Render the model
+flexible_coupling();
 
