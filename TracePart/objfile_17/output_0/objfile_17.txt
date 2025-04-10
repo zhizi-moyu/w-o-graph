@@ -1,0 +1,57 @@
+
+
+            component_list = {
+    'input_shaft_hub': {
+        'num': '1',
+        'description': 'A solid cylindrical hub with a central bore and a flange base. The bore is likely keyed or slotted for shaft fitting. It connects to the flange plates via bolts.'
+    },
+    'output_shaft_hub': {
+        'num': '1',
+        'description': 'A mirror of the input shaft hub, also a solid cylindrical hub with a central bore and flange base. It is mounted on the opposite side and connects to the flange plates.'
+    },
+    'spacer_ring': {
+        'num': '2',
+        'description': 'Very flat, thin rings sandwiched between the flange plates. They provide spacing and possibly some flexibility or damping in the coupling.'
+    },
+    'flange_plate': {
+        'num': '4',
+        'description': 'Flat, thick circular plates with bolt holes. Each hub connects to two flange plates, which are bolted together with the spacer ring in between.'
+    },
+    'bolt': {
+        'num': '8',
+        'description': 'Slender cylindrical fasteners with hex heads, used to clamp the flange plates together. Four bolts are used on each side of the coupling.'
+    },
+    'nut': {
+        'num': '8',
+        'description': 'Hexagonal nuts paired with the bolts to secure the flange plates. Positioned opposite the bolt heads.'
+    }
+}
+            modify component list:
+            component_list = {
+    'input_shaft_hub': {
+        'num': '1',
+        'description': 'A solid cylindrical hub with a central bore and a flange base. The bore is likely keyed or slotted for shaft fitting. It connects to the flange plates via bolts.'
+    },
+    'output_shaft_hub': {
+        'num': '1',
+        'description': 'A mirror of the input shaft hub, also a solid cylindrical hub with a central bore and flange base. It is mounted on the opposite side and connects to the flange plates.'
+    },
+    'spacer_ring': {
+        'num': '2',
+        'description': 'Very flat, thin rings sandwiched between the flange plates. They provide spacing and possibly some flexibility or damping in the coupling.'
+    },
+    'flange_plate': {
+        'num': '2',
+        'description': 'Flat, thick circular plates with bolt holes. Each hub connects to one flange plate, and the two flange plates are bolted together with the spacer rings in between.'
+    },
+    'bolt': {
+        'num': '8',
+        'description': 'Slender cylindrical fasteners with hex heads, used to clamp the flange plates together. Four bolts are used on each side of the coupling.'
+    },
+    'nut': {
+        'num': '8',
+        'description': 'Hexagonal nuts paired with the bolts to secure the flange plates. Positioned opposite the bolt heads.'
+    }
+}
+            
+        
