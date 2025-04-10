@@ -1,0 +1,25 @@
+
+
+            component_list = {
+    'central_body': {
+        'num': '1',
+        'description': 'A single cylindrical shaft with a central bulge and multiple helical cuts along its length. The helical cuts form a flexible beam structure, allowing for torsional flexibility and slight misalignment compensation. The ends of the cylinder are slightly narrower and have threaded holes for clamping screws.'
+    },
+    'clamping_screw': {
+        'num': '4',
+        'description': 'Small cylindrical screws with hexagonal sockets, inserted into threaded holes at both ends of the central body. These screws are used to clamp the coupling onto the shafts by tightening them into the split ends of the cylinder.'
+    }
+}
+            modify component list:
+            component_list = {
+    'central_body': {
+        'num': '1',
+        'description': 'A single cylindrical shaft with a central bulge and multiple helical cuts along its length. The helical cuts form a flexible beam structure, allowing for torsional flexibility and slight misalignment compensation. The ends of the cylinder are slightly narrower and have threaded holes for clamping screws.'
+    },
+    'clamping_screw': {
+        'num': '4',
+        'description': 'Small cylindrical screws with hexagonal sockets, inserted into threaded holes at both ends of the central body. These screws are used to clamp the coupling onto the shafts by tightening them into the split ends of the cylinder.'
+    }
+}
+            
+        
