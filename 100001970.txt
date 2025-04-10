@@ -1,0 +1,17 @@
+
+
+            component_list = {
+    'stepped_cylinder_shaft': {
+        'num': '1',
+        'description': 'A single solid component consisting of two coaxial cylindrical sections. The upper section is a larger diameter cylinder with a flat top and vertical sides. The lower section is a smaller diameter cylinder protruding concentrically from the bottom of the larger one. The bottom face of the smaller cylinder is flat, and the transition between the two sections is a sharp step. The underside of the larger cylinder has a recessed circular cavity that partially encloses the smaller cylinder, giving it a socket-like appearance. The entire component is symmetrical around its vertical axis.'
+    }
+}
+            modify component list:
+            component_list = {
+    'stepped_cylinder_shaft': {
+        'num': '1',
+        'description': 'A single solid component consisting of two coaxial cylindrical sections. The upper section is a larger diameter cylinder with a flat top and vertical sides. The lower section is a smaller diameter cylinder protruding concentrically from the bottom of the larger one. The bottom face of the smaller cylinder is flat, and the transition between the two sections is a sharp step. The underside of the larger cylinder has a recessed circular cavity that partially encloses the smaller cylinder, giving it a socket-like appearance. The entire component is symmetrical around its vertical axis.'
+    }
+}
+            
+        
