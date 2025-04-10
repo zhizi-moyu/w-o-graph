@@ -1,0 +1,17 @@
+
+
+            component_list = {
+    'rectangular_block': {
+        'num': '1',
+        'description': 'A single solid block with a rectangular base. The top edges are smoothly rounded, while the bottom edges remain sharp. The overall shape is a cuboid with softened top corners, giving it a slightly beveled appearance from the top. The sides are flat and vertical, and the top surface is flat. The object appears to be a single molded or machined piece with no separable parts.'
+    }
+}
+            modify component list:
+            component_list = {
+    'rectangular_block': {
+        'num': '1',
+        'description': 'A single solid block with a rectangular base. The top edges are smoothly rounded, while the bottom edges remain sharp. The overall shape is a cuboid with softened top corners, giving it a slightly beveled appearance from the top. The sides are flat and vertical, and the top surface is flat. The object appears to be a single molded or machined piece with no separable parts.'
+    }
+}
+            
+        
