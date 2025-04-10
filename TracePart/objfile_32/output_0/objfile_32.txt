@@ -1,0 +1,41 @@
+
+
+            component_list = {
+    'left_clamping_hub': {
+        'num': '1',
+        'description': 'A short cylindrical hub with a central bore and two threaded holes on the face for clamping screws. It has a slot cut through the side to allow tightening and clamping onto a shaft.'
+    },
+    'right_clamping_hub': {
+        'num': '1',
+        'description': 'A mirror of the left clamping hub, also a short cylindrical hub with a central bore, two threaded holes on the face, and a side slot for shaft clamping.'
+    },
+    'helical_flexible_body': {
+        'num': '1',
+        'description': 'A single cylindrical body with a continuous helical cut running through the middle section, allowing for torsional flexibility. The helical cut creates a spring-like structure that connects the two hubs and allows for angular misalignment and vibration damping.'
+    },
+    'clamping_screw': {
+        'num': '4',
+        'description': 'Short cylindrical bolts with hexagonal sockets, used to tighten the clamping hubs onto the shafts. Two are inserted into each end face of the coupling.'
+    }
+}
+            modify component list:
+            component_list = {
+    'left_clamping_hub': {
+        'num': '1',
+        'description': 'A short cylindrical hub with a central bore and two threaded holes on the face for clamping screws. It has a slot cut through the side to allow tightening and clamping onto a shaft.'
+    },
+    'right_clamping_hub': {
+        'num': '1',
+        'description': 'A mirror of the left clamping hub, also a short cylindrical hub with a central bore, two threaded holes on the face, and a side slot for shaft clamping.'
+    },
+    'helical_flexible_body': {
+        'num': '1',
+        'description': 'A single cylindrical body with a continuous helical cut running through the middle section, allowing for torsional flexibility. The helical cut creates a spring-like structure that connects the two hubs and allows for angular misalignment and vibration damping.'
+    },
+    'clamping_screw': {
+        'num': '4',
+        'description': 'Short cylindrical bolts with hexagonal sockets, used to tighten the clamping hubs onto the shafts. Two are inserted into each end face of the coupling.'
+    }
+}
+            
+        
