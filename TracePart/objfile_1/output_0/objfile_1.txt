@@ -1,0 +1,33 @@
+
+
+            component_list = {
+    'left_coupling_half': {
+        'num': '1',
+        'description': 'A cylindrical component with a central bore hole and a set of three rectangular slots on the inner face. The outer surface is smooth, and the inner face has a recessed area to accommodate the central spider.'
+    },
+    'right_coupling_half': {
+        'num': '1',
+        'description': 'A mirror image of the left coupling half, also cylindrical with a central bore hole and three rectangular slots on the inner face. It mates with the left half via the central spider.'
+    },
+    'central_spider': {
+        'num': '1',
+        'description': 'A flexible insert shaped like a three-lobed star or gear, designed to fit into the slots of both coupling halves. It provides torque transmission while allowing for slight misalignment and vibration damping.'
+    }
+}
+            modify component list:
+            component_list = {
+    'left_coupling_half': {
+        'num': '1',
+        'description': 'A cylindrical component with a central bore hole and a set of three rectangular slots on the inner face. The outer surface is smooth, and the inner face has a recessed area to accommodate the central spider.'
+    },
+    'right_coupling_half': {
+        'num': '1',
+        'description': 'A mirror image of the left coupling half, also cylindrical with a central bore hole and three rectangular slots on the inner face. It mates with the left half via the central spider.'
+    },
+    'central_spider': {
+        'num': '1',
+        'description': 'A flexible insert shaped like a three-lobed star or gear, designed to fit into the slots of both coupling halves. It provides torque transmission while allowing for slight misalignment and vibration damping.'
+    }
+}
+            
+        
