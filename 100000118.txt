@@ -1,0 +1,17 @@
+
+
+            component_list = {
+    'sloped_inner_box': {
+        'num': '1',
+        'description': 'A square hollow box with vertical outer walls and a sloped inner surface. The top face is open, and the inner cavity forms a triangular recess that slopes from one corner down to the opposite side. The outer shape is a rectangular prism, while the inner cavity has a unique geometry with one triangular face and three flat walls. The bottom is closed and flat.'
+    }
+}
+            modify component list:
+            component_list = {
+    'sloped_inner_box': {
+        'num': '1',
+        'description': 'A square hollow box with vertical outer walls and a sloped inner surface. The top face is open, and the inner cavity forms a triangular recess that slopes from one corner down to the opposite side. The outer shape is a rectangular prism, while the inner cavity has a unique geometry with one triangular face and three flat walls. The bottom is closed and flat.'
+    }
+}
+            
+        
