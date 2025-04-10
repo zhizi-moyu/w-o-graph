@@ -1,0 +1,49 @@
+
+
+            component_list = {
+    'left_hub': {
+        'num': '1',
+        'description': 'A solid cylindrical component with a central bore for shaft mounting, and three evenly spaced bolt holes on the flange face. The outer edge has curved cutouts to interlock with the elastomer spider.'
+    },
+    'right_hub': {
+        'num': '1',
+        'description': 'A mirror image of the left hub, also a solid cylindrical component with a central bore and three bolt holes. It features matching curved cutouts to engage with the elastomer spider.'
+    },
+    'elastomer_spider': {
+        'num': '1',
+        'description': 'A flexible star-shaped component with six arms (or legs), each fitting into the curved cutouts of the hubs. It acts as a cushion between the hubs to absorb shock and misalignment.'
+    },
+    'bolt': {
+        'num': '3',
+        'description': 'Slender cylindrical fasteners with hexagonal heads, used to clamp the two hubs together through the flange holes.'
+    },
+    'nut': {
+        'num': '3',
+        'description': 'Hexagonal components that thread onto the bolts to secure the hubs. Positioned on the opposite side of the bolt heads.'
+    }
+}
+            modify component list:
+            component_list = {
+    'left_hub': {
+        'num': '1',
+        'description': 'A solid cylindrical component with a central bore for shaft mounting, and three evenly spaced bolt holes on the flange face. The outer edge has curved cutouts to interlock with the elastomer spider.'
+    },
+    'right_hub': {
+        'num': '1',
+        'description': 'A mirror image of the left hub, also a solid cylindrical component with a central bore and three bolt holes. It features matching curved cutouts to engage with the elastomer spider.'
+    },
+    'elastomer_spider': {
+        'num': '1',
+        'description': 'A flexible star-shaped component with six arms (or legs), each fitting into the curved cutouts of the hubs. It acts as a cushion between the hubs to absorb shock and misalignment.'
+    },
+    'bolt': {
+        'num': '3',
+        'description': 'Slender cylindrical fasteners with hexagonal heads, used to clamp the two hubs together through the flange holes.'
+    },
+    'nut': {
+        'num': '3',
+        'description': 'Hexagonal components that thread onto the bolts to secure the hubs. Positioned on the opposite side of the bolt heads.'
+    }
+}
+            
+        
