@@ -1,0 +1,17 @@
+
+
+            component_list = {
+    'shaft_body': {
+        'num': '1',
+        'description': 'A single cylindrical shaft with multiple stepped diameters. The central section is slightly wider and smoothly transitions into narrower cylindrical ends. Each end has a series of shallow grooves and slots, possibly for keying or securing with other components. The shaft has a central bulge, and both ends are symmetrically machined. The ends also feature small through-holes, likely for pin or bolt insertion. The overall geometry suggests it is a precision-machined rotating shaft or coupling element.'
+    }
+}
+            modify component list:
+            component_list = {
+    'shaft_body': {
+        'num': '1',
+        'description': 'A single cylindrical shaft with multiple stepped diameters. The central section is slightly wider and smoothly transitions into narrower cylindrical ends. Each end has a series of shallow grooves and slots, possibly for keying or securing with other components. The shaft has a central bulge, and both ends are symmetrically machined. The ends also feature small through-holes, likely for pin or bolt insertion. The overall geometry suggests it is a precision-machined rotating shaft or coupling element.'
+    }
+}
+            
+        
