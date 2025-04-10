@@ -1,0 +1,17 @@
+
+
+            component_list = {
+    'angled_bracket_with_pin': {
+        'num': '1',
+        'description': 'A single L-shaped bracket with a vertical and horizontal arm. The vertical arm is a flat rectangular plate extending upward. The horizontal arm is a flat elongated base with a cylindrical pin protruding downward near one end. The pin appears to be integrated into the base and is likely used for rotational or locking purposes. The inner corner of the L-shape is smoothly filleted for structural strength. The entire component appears to be a single molded or machined piece, likely used as a mounting or guiding bracket in a mechanical assembly.'
+    }
+}
+            modify component list:
+            component_list = {
+    'angled_bracket_with_pin': {
+        'num': '1',
+        'description': 'A single L-shaped bracket with a vertical and horizontal arm. The vertical arm is a flat rectangular plate extending upward. The horizontal arm is a flat elongated base with a cylindrical pin protruding downward near one end. The pin appears to be integrated into the base and is likely used for rotational or locking purposes. The inner corner of the L-shape is smoothly filleted for structural strength. The entire component appears to be a single molded or machined piece, likely used as a mounting or guiding bracket in a mechanical assembly.'
+    }
+}
+            
+        
