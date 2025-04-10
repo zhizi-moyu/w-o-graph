@@ -1,0 +1,53 @@
+
+
+            component_list = {
+    'left_jaw_block': {
+        'num': '1',
+        'description': 'A solid rectangular block with a semi-circular groove on one side, two bolt holes, and a curved interlocking arm extending from the top. It has a flat base and a cylindrical hole for the central core.'
+    },
+    'right_jaw_block': {
+        'num': '1',
+        'description': 'A mirrored counterpart to the left jaw block, also with a semi-circular groove, two bolt holes, and a curved interlocking arm. It mates with the left block to form a cylindrical cavity.'
+    },
+    'central_cylindrical_core': {
+        'num': '1',
+        'description': 'A short, thick cylinder that fits between the two jaw blocks, providing rotational alignment and structural support. It has a central bore and is partially enclosed by the jaw blocks.'
+    },
+    'curved_interlocking_arm': {
+        'num': '2',
+        'description': 'Curved, claw-like extensions attached to the top of each jaw block. They interlock with each other to provide mechanical engagement and prevent axial separation.'
+    },
+    'bolt': {
+        'num': '2',
+        'description': 'Slender cylindrical fasteners with a hexagonal head, inserted through the bolt holes in the jaw blocks to clamp them together.'
+    },
+    'nut': {
+        'num': '2',
+        'description': 'Hexagonal nuts that thread onto the bolts to secure the jaw blocks. They are seated in recessed pockets on the outer face of the blocks.'
+    }
+}
+            modify component list:
+            component_list = {
+    'left_jaw_block': {
+        'num': '1',
+        'description': 'A solid rectangular block with a semi-circular groove on one side, two bolt holes, and a curved interlocking arm extending from the top. It has a flat base and a cylindrical hole for the central core.'
+    },
+    'right_jaw_block': {
+        'num': '1',
+        'description': 'A mirrored counterpart to the left jaw block, also with a semi-circular groove, two bolt holes, and a curved interlocking arm. It mates with the left block to form a cylindrical cavity.'
+    },
+    'central_cylindrical_core': {
+        'num': '1',
+        'description': 'A short, thick cylinder that fits between the two jaw blocks, providing rotational alignment and structural support. It has a central bore and is partially enclosed by the jaw blocks.'
+    },
+    'bolt': {
+        'num': '2',
+        'description': 'Slender cylindrical fasteners with a hexagonal head, inserted through the bolt holes in the jaw blocks to clamp them together.'
+    },
+    'nut': {
+        'num': '2',
+        'description': 'Hexagonal nuts that thread onto the bolts to secure the jaw blocks. They are seated in recessed pockets on the outer face of the blocks.'
+    }
+}
+            
+        
