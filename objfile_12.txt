@@ -1,0 +1,57 @@
+
+
+            component_list = {
+    'input_shaft_hub': {
+        'num': '1',
+        'description': 'A cylindrical component with a central bore for shaft insertion, external grooves for grip, and a flange face with bolt holes. It has a slit for clamping and a threaded hole for a set screw.'
+    },
+    'output_shaft_hub': {
+        'num': '1',
+        'description': 'Identical to the input shaft hub, this cylindrical part also features a central bore, external grooves, a flange face with bolt holes, and a slit for clamping.'
+    },
+    'bellows': {
+        'num': '1',
+        'description': 'A flexible, corrugated cylindrical element that connects the two hubs. It allows for angular and axial misalignment while transmitting torque.'
+    },
+    'flange_ring': {
+        'num': '2',
+        'description': 'Flat circular rings with multiple bolt holes arranged in a circular pattern. These are mounted on either side of the bellows to connect it to the hubs.'
+    },
+    'bolt': {
+        'num': '12',
+        'description': 'Slender cylindrical fasteners with hexagonal heads, used to secure the flange rings to the hubs through the bolt holes.'
+    },
+    'nut': {
+        'num': '12',
+        'description': 'Hexagonal cylindrical components that thread onto the bolts to fasten the flange rings securely to the hubs.'
+    }
+}
+            modify component list:
+            component_list = {
+    'input_shaft_hub': {
+        'num': '1',
+        'description': 'A cylindrical component with a central bore for shaft insertion, external grooves for grip, and a flange face with bolt holes. It has a slit for clamping and a threaded hole for a set screw.'
+    },
+    'output_shaft_hub': {
+        'num': '1',
+        'description': 'Identical to the input shaft hub, this cylindrical part also features a central bore, external grooves, a flange face with bolt holes, and a slit for clamping.'
+    },
+    'bellows': {
+        'num': '1',
+        'description': 'A flexible, corrugated cylindrical element that connects the two hubs. It allows for angular and axial misalignment while transmitting torque.'
+    },
+    'flange_ring': {
+        'num': '2',
+        'description': 'Flat circular rings with multiple bolt holes arranged in a circular pattern. These are mounted on either side of the bellows to connect it to the hubs.'
+    },
+    'bolt': {
+        'num': '12',
+        'description': 'Slender cylindrical fasteners with hexagonal heads, used to secure the flange rings to the hubs through the bolt holes.'
+    },
+    'nut': {
+        'num': '12',
+        'description': 'Hexagonal cylindrical components that thread onto the bolts to fasten the flange rings securely to the hubs.'
+    }
+}
+            
+        
