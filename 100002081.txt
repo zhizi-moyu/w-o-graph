@@ -1,0 +1,17 @@
+
+
+            component_list = {
+    'hollow_block': {
+        'num': '1',
+        'description': 'A solid rectangular cuboid block with a flat top and bottom surface. One face of the block features four evenly spaced square pyramidal recesses arranged in a 2x2 grid. Each recess is a square-based inverted pyramid, tapering inward symmetrically. The other five faces of the block are flat and smooth, with no additional features or holes. The block appears to be a single molded or machined piece.'
+    }
+}
+            modify component list:
+            component_list = {
+    'hollow_block': {
+        'num': '1',
+        'description': 'A solid rectangular cuboid block with a flat top and bottom surface. One face of the block features four evenly spaced square pyramidal recesses arranged in a 2x2 grid. Each recess is a square-based inverted pyramid, tapering inward symmetrically. The other five faces of the block are flat and smooth, with no additional features or holes. The block appears to be a single molded or machined piece.'
+    }
+}
+            
+        
