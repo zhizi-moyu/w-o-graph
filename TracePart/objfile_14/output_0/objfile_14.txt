@@ -1,0 +1,49 @@
+
+
+            component_list = {
+    'input_hub': {
+        'num': '1',
+        'description': 'A short cylindrical hub with a flat face and three evenly spaced jaw-like protrusions extending radially inward. It has a central bore for shaft mounting and two small threaded holes on the face for securing pins.'
+    },
+    'output_hub': {
+        'num': '1',
+        'description': 'A matching cylindrical hub similar to the input hub, also with three jaw-like protrusions and a central bore. It mirrors the input hub and mates with it through the spider insert.'
+    },
+    'jaw_element': {
+        'num': '6',
+        'description': 'Thick rectangular prongs extending from the face of each hub, forming interlocking jaws. Each hub has three of these elements, spaced 120 degrees apart, designed to engage with the spider insert.'
+    },
+    'spider_insert': {
+        'num': '1',
+        'description': 'A flexible, star-shaped insert with six arms that fit snugly between the jaw elements of the input and output hubs. It acts as a cushion to absorb shock and misalignment.'
+    },
+    'pin': {
+        'num': '2',
+        'description': 'Slender cylindrical rods that pass through the body of the coupling, likely for alignment or securing the hubs together. They are visible on the side and pass through both hubs.'
+    }
+}
+            modify component list:
+            component_list = {
+    'input_hub': {
+        'num': '1',
+        'description': 'A short cylindrical hub with a flat face and three evenly spaced jaw-like protrusions extending radially inward. It has a central bore for shaft mounting and two small threaded holes on the face for securing pins.'
+    },
+    'output_hub': {
+        'num': '1',
+        'description': 'A matching cylindrical hub similar to the input hub, also with three jaw-like protrusions and a central bore. It mirrors the input hub and mates with it through the spider insert.'
+    },
+    'jaw_element': {
+        'num': '6',
+        'description': 'Thick rectangular prongs extending from the face of each hub, forming interlocking jaws. Each hub has three of these elements, spaced 120 degrees apart, designed to engage with the spider insert.'
+    },
+    'spider_insert': {
+        'num': '1',
+        'description': 'A flexible, star-shaped insert with six arms that fit snugly between the jaw elements of the input and output hubs. It acts as a cushion to absorb shock and misalignment.'
+    },
+    'pin': {
+        'num': '2',
+        'description': 'Slender cylindrical rods that pass through the body of the coupling, likely for alignment or securing the hubs together. They are visible on the side and pass through both hubs.'
+    }
+}
+            
+        
